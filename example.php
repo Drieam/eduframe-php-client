@@ -5,8 +5,8 @@ require __DIR__ . '/vendor/autoload.php';
 $connection = new \Eduframe\Connection();
 $connection->setTesting(true);
 
-$connection->setAccessToken('f00c7fadeab67e69bc6e0f0dc0d1edf8');
-$connection->setEducatorSlug('educator-with-canvas');
+$connection->setAccessToken('9545191cecf871e2a6d9487b4210c69e');
+$connection->setEducatorSlug('drieam-test');
 
 try {
     $connection->connect();
@@ -16,8 +16,14 @@ try {
 
 $eduframe = new \Eduframe\Eduframe($connection);
 
-$customers = $eduframe->customer()->all(['include' => 'address']);
+//$courses = $eduframe->course()->all();
+//$customers = $eduframe->customer()->all(['include' => 'address']);
+//$customer_Enrollments = $eduframe->customer_enrollment()->all();
+//$enrollments = $eduframe->enrollment()->all();
+//$planned_Courses = $eduframe->planned_course()->all(['include' => 'meetings']);
+$teachers = $eduframe->teacher()->all();
+
 
 header("Content-Type: application/json");
 
-echo json_encode($customers);
+echo json_encode($teachers);
