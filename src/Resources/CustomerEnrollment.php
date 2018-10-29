@@ -23,7 +23,6 @@ class CustomerEnrollment extends Resource {
 		'number_of_students',
 		'updated_at',
 		'created_at'
-
 	];
 
 	/**

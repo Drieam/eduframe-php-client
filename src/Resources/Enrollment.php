@@ -11,7 +11,6 @@ class Enrollment extends Resource {
 
 	use FindAll, FindOne;
 
-
 	/**
 	 * @var array
 	 */
@@ -20,7 +19,7 @@ class Enrollment extends Resource {
 		'student_id',
 		'status',
 		'comments',
-		'passed',
+		'graduation_state',
 		'created_at',
 		'updated_at'
 	];

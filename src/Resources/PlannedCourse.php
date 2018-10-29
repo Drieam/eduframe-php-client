@@ -23,6 +23,8 @@ class PlannedCourse extends Resource {
 		'duration_in_days',
 		'duration_in_hours',
 		'availability_state',
+		'max_participants',
+		'requested_and_active_and_completed_enrollments_count',
 		'cost_scheme',
 		'cost',
 		'meetings',

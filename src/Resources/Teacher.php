@@ -11,7 +11,6 @@ class Teacher extends Resource {
 
 	use FindAll, FindOne;
 
-
 	/**
 	 * @var array
 	 */
