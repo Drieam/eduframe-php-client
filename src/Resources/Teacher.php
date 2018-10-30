@@ -8,8 +8,7 @@ use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
 use Eduframe\Traits\HasPluginData;
 
-class Teacher extends Resource
-{
+class Teacher extends Resource {
 
 	use FindAll, FindOne, HasPluginData;
 
@@ -26,15 +25,15 @@ class Teacher extends Resource
 		'plugin_data'
 	];
 
-    /**
-     * @var string
-     */
-    protected $endpoint = 'teachers';
+	/**
+	 * @var string
+	 */
+	protected $endpoint = 'teachers';
 
-    /**
-     * @var string
-     */
-    protected $namespace = 'teacher';
+	/**
+	 * @var string
+	 */
+	protected $namespace = 'teacher';
 
 	/**
 	 * @var array
@@ -42,7 +41,7 @@ class Teacher extends Resource
 	protected $multipleNestedEntities = [
 		'plugin_data' => [
 			'entity' => Data::class,
-			'type' => self::NESTING_TYPE_NESTED_OBJECTS,
+			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		],
 	];
 }
