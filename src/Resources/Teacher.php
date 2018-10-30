@@ -3,24 +3,28 @@
 namespace Eduframe\Resources;
 
 use Eduframe\Resource;
+use Eduframe\Resources\Plugins\Data;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
-
+use Eduframe\Traits\HasPluginData;
 
 class Teacher extends Resource
 {
 
-    use FindAll, FindOne;
+	use FindAll, FindOne, HasPluginData;
 
-
-    /**
-     * @var array
-     */
-    protected $fillable = [
-        'teacher_description',
-        'avatar_url',
-        'slug'
-    ];
+	/**
+	 * @var array
+	 */
+	protected $fillable = [
+		'id',
+		'teacher_description',
+		'avatar_url',
+		'slug',
+		'updated_at',
+		'created_at',
+		'plugin_data'
+	];
 
     /**
      * @var string
