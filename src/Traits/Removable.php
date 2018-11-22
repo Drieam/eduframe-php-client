@@ -18,5 +18,4 @@ trait Removable {
 	public function delete() {
 		return $this->connection()->delete( $this->getEndpoint() . '/' . urlencode( $this->id ) );
 	}
-
 }
