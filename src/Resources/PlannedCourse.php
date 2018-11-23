@@ -31,7 +31,8 @@ class PlannedCourse extends Resource {
 		'teachers',
 		'updated_at',
 		'created_at',
-		'plugin_data'
+		'plugin_data',
+		'course_variant'
 	];
 
 	/**
@@ -65,5 +66,12 @@ class PlannedCourse extends Resource {
 			'entity' => Data::class,
 			'type'   => self::NESTING_TYPE_NESTED_OBJECTS,
 		]
+	];
+
+	/**
+	 * @var array
+	 */
+	protected $singleNestedEntities = [
+		'course_variant' => CourseVariant::class,
 	];
 }
