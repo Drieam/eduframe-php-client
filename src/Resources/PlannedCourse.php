@@ -32,7 +32,8 @@ class PlannedCourse extends Resource {
 		'updated_at',
 		'created_at',
 		'plugin_data',
-		'course_variant'
+		'course_variant',
+		'course_location'
 	];
 
 	/**
@@ -73,5 +74,6 @@ class PlannedCourse extends Resource {
 	 */
 	protected $singleNestedEntities = [
 		'course_variant' => CourseVariant::class,
+		'course_location' => CourseVariant::class,
 	];
 }
