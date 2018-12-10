@@ -24,7 +24,7 @@ $connection = new \Eduframe\Connection();
 $connection->setEducatorSlug( 'EDUCATOR' );
 ```
 However when accessing invoices or users an access token is required. 
-An access token can be obtained by requesting one via [Drieam support](mailto:support@drieam.com.com).
+An access token can be obtained by requesting one via [Drieam support](mailto:support@drieam.com).
 
 ```
 $connection->setAccessToken( 'ACCESS_TOKEN' );
