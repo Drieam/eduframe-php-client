@@ -7,6 +7,7 @@ use Eduframe\Resources\Address;
 use Eduframe\Resources\Category;
 use Eduframe\Resources\Course;
 use Eduframe\Resources\Edition;
+use Eduframe\Resources\Element;
 use Eduframe\Resources\Enrollment;
 use Eduframe\Resources\Label;
 use Eduframe\Resources\Lead;
@@ -110,6 +111,14 @@ class Client {
 		return new Edition( $this->connection, $attributes );
 	}
 
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Element
+	 */
+	public function elements( $attributes = [] ) {
+		return new Element( $this->connection, $attributes );
+	}
+	
 	/**
 	 * @param array $attributes
 	 * @return \Eduframe\Resources\Enrollment
