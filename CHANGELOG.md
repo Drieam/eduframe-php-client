@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Drieam/eduframe-php-client/compare/v1.0.0...v1.0.1) (2023-01-20)
+
+
+### Miscellaneous Chores
+
+* Update package.json version ([d024fd4](https://github.com/Drieam/eduframe-php-client/commit/d024fd41f5f4a1047595379dbe0450b9ace7cf75))
+
 ## 1.0.0 (2023-01-20)
 
 
