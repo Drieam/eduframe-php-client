@@ -6,6 +6,8 @@ use Eduframe\Resources\Account;
 use Eduframe\Resources\Address;
 use Eduframe\Resources\Category;
 use Eduframe\Resources\Course;
+use Eduframe\Resources\CourseTabContent;
+use Eduframe\Resources\CourseTab;
 use Eduframe\Resources\Edition;
 use Eduframe\Resources\Element;
 use Eduframe\Resources\Enrollment;
@@ -15,6 +17,8 @@ use Eduframe\Resources\LeadInterest;
 use Eduframe\Resources\LeadProduct;
 use Eduframe\Resources\Location;
 use Eduframe\Resources\Meeting;
+use Eduframe\Resources\MeetingLocation;
+use Eduframe\Resources\User;
 use Eduframe\Resources\Variant;
 use Eduframe\Resources\Order;
 use Eduframe\Resources\PaymentMethod;
@@ -26,6 +30,13 @@ use Eduframe\Resources\SignupQuestion;
 use Eduframe\Resources\Teacher;
 use Eduframe\Resources\CatalogProduct;
 use Eduframe\Resources\CatalogVariant;
+use Eduframe\Resources\Invoice;
+use Eduframe\Resources\InvoiceItem;
+use Eduframe\Resources\Task;
+use Eduframe\Resources\Attendance;
+
+
+
 
 /**
  * Class Eduframe
@@ -174,19 +185,41 @@ class Client
 
     /**
      * @param array $attributes
-     * @return \Eduframe\Resources\Order
+     * @return \Eduframe\Resources\MeetingLocation
      */
-    public function orders($attributes = []) {
-        return new Order($this->connection, $attributes);
+    public function meetings_locations( $attributes = [] ) {
+        return new MeetingLocation( $this->connection, $attributes );
     }
 
+
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\Order
+	 */
+	public function orders($attributes = []) {
+		return new Order($this->connection, $attributes);
+	}
     /**
      * @param array $attributes
-     * @return \Eduframe\Resources\PaymentMethod
+     * @return \Eduframe\Resources\Invoice
      */
-    public function payment_methods($attributes = []) {
-        return new PaymentMethod($this->connection, $attributes);
+    public function invoices($attributes = []) {
+        return new Invoice($this->connection, $attributes);
     }
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\InvoiceItem
+     */
+    public function invoicesItem($attributes = []) {
+        return new InvoiceItem($this->connection, $attributes);
+    }
+	/**
+	 * @param array $attributes
+	 * @return \Eduframe\Resources\PaymentMethod
+	 */
+	public function payment_methods($attributes = []) {
+		return new PaymentMethod($this->connection, $attributes);
+	}
 
     /**
      * @param array $attributes
@@ -244,10 +277,45 @@ class Client
         return new CatalogVariant($this->connection, $attributes);
     }
 
-    /**
-     * @return \Eduframe\Connection
+     /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\CourseTabContent
      */
-    public function getConnection() {
-        return $this->connection;
+    public function courseTabContents( $attributes = [] ) {
+        return new CourseTabContent( $this->connection, $attributes );
     }
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\Task
+     */
+    public function tasks( $attributes = [] ) {
+        return new Task( $this->connection, $attributes );
+    }
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\Attendance
+     */
+    public function attendances( $attributes = [] ) {
+        return new Attendance( $this->connection, $attributes );
+    }
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\CourseTab
+     */
+    public function courseTab( $attributes = [] ) {
+        return new CourseTab( $this->connection, $attributes );
+    }
+    /**
+     * @param array $attributes
+     * @return \Eduframe\Resources\User
+     */
+    public function users( $attributes = [] ) {
+        return new User( $this->connection, $attributes );
+    }
+	/**
+	 * @return \Eduframe\Connection
+	 */
+	public function getConnection() {
+		return $this->connection;
+	}
 }

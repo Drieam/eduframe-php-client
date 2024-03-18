@@ -5,10 +5,13 @@ namespace Eduframe\Resources;
 use Eduframe\Resource;
 use Eduframe\Traits\FindAll;
 use Eduframe\Traits\FindOne;
+use Eduframe\Traits\Storable;
+use Eduframe\Traits\Removable;
 
-class PlannedCourse extends Resource
-{
-    use FindAll, FindOne;
+
+class PlannedCourse extends Resource {
+	use FindAll, FindOne, Storable, Removable;
+
 
     /**
      * @var array
